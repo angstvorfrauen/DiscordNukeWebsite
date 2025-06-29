@@ -1,1 +1,33 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discord Bot Dashboard</title>
+  <link rel="stylesheet" href="./CSS/index.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="navbar">
+    <div class="brand">Bot Dashboard</div>
+  </div>
+  <div class="container">
+    <h1>Connect Your Discord Bot</h1>
+    <div class="card">
+      <div class="input-row">
+        <div class="input-group">
+          <input type="text" id="token" placeholder="Enter your bot token" />
+        </div>
+        <button onclick="connectBot()" id="connectBtn">Connect</button>
+      </div>
+      <button onclick="stopBot()" id="stopBtn" style="display:none; margin-top: 10px;">Stop Bot</button>
+      <p id="response" class="small">Status: Not connected</p>
+    </div>
+    <div class="footer">
+      © 2025 Rocketclient
+    </div>
+  </div>
+  <div class="toast-container" id="toast-container"></div>
+  <script src="./JS/index.js"></script>
+</body>
+</html>
