@@ -1,9 +1,11 @@
+z
+/*===============================*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+/*===============================*/
 body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(to right, #1e3a8a, #2563eb);
@@ -14,7 +16,7 @@ body {
   align-items: center;
   padding: 100px 20px 30px;
 }
-
+/*===============================*/
 .navbar {
   position: fixed;
   top: 0;
@@ -22,56 +24,111 @@ body {
   right: 0;
   background-color: rgba(30, 58, 138, 0.95);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 0 0 16px 16px;
   padding: 16px 24px;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
   z-index: 999;
 }
-
+/*===============================*/
 .brand {
   font-size: 1.6rem;
   font-weight: bold;
   color: #60a5fa;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/*===============================*/
+.user {
+  font-size: 1rem;
+  color: #bfdbfe;
+}
+/*===============================*/
+.settings-icon {
+  color: #3b82f6;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
+.settings-icon:hover {
+  color: #2563eb;
+  background-color: rgba(59, 130, 246, 0.15);
+}
+/*===============================*/
 .container {
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
 }
-
+/*===============================*/
 h1 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 2rem;
 }
-
+/*===============================*/
 .card {
   background-color: rgba(30, 58, 138, 0.95);
   border-radius: 20px;
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
   text-align: center;
   margin-bottom: 1.5rem;
   transition: 0.3s ease;
 }
-
+/*===============================*/
 .card:hover {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
   transform: translateY(-3px);
 }
-
+/*===============================*/
+.label {
+  font-size: 1.1rem;
+  color: #bfdbfe;
+  margin-bottom: 0.8rem;
+}
+/*===============================*/
+.value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #60a5fa;
+}
+/*===============================*/
+.small {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+/*===============================*/
+.outui {
+  background-color: rgba(59, 130, 246, 0.15);
+  border: 1px solid #60a5fa;
+}
+/*===============================*/
+.footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+/*===============================*/
 .input-row {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
   align-items: stretch;
   justify-content: center;
   margin: 1rem 0;
 }
-
-.input-group {
+/*===============================*/
+.input-row .input-group {
+  flex: 1;
   display: flex;
   align-items: center;
   background: rgba(59, 130, 246, 0.1);
@@ -79,8 +136,14 @@ h1 {
   border-radius: 12px;
   padding: 1rem 1.25rem;
 }
-
-.input-group input {
+/*===============================*/
+.input-row .input-group i {
+  margin-right: 1rem;
+  color: #93c5fd;
+  font-size: 1.2rem;
+}
+/*===============================*/
+.input-row .input-group input {
   flex: 1;
   background: none;
   border: none;
@@ -89,12 +152,12 @@ h1 {
   outline: none;
   min-width: 0;
 }
-
+/*===============================*/
 .input-row button {
   background-color: #3b82f6;
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 0 1.25rem;
   font-size: 1.1rem;
   border-radius: 12px;
   font-weight: 600;
@@ -104,51 +167,110 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-
+/*===============================*/
 .input-row button:hover {
   background-color: #2563eb;
 }
-
-.small {
-  font-size: 0.95rem;
-  color: #cbd5e1;
+/*===============================*/
+.stop-btn {
+  background-color: #ef4444;
   margin-top: 1rem;
 }
 
-.footer {
-  margin-top: 3rem;
-  text-align: center;
-  color: #cbd5e1;
-  font-size: 0.95rem;
+.stop-btn:hover {
+  background-color: #dc2626;
+}
+/*===============================*/
+.toast-container {
+  position: fixed;
+  top: 85px;
+  left: -10px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+/*===============================*/
+.toast {
+  background: linear-gradient(to right, rgba(30, 58, 138, 0.85), rgba(37, 99, 235, 0.85));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #ffffff;
+  padding: 20px 28px;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  animation: fadeInLeft 0.4s ease-out, fadeOutLeft 0.5s ease-in 3.2s forwards;
+  max-width: 400px;
+  min-width: 280px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/*===============================*/
+.toast i {
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+/*===============================*/
+.toast .close-btn {
+  background: transparent;
+  border: none;
+  color: #ffffffcc;
+  font-size: 1.2rem;
+  margin-left: auto;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 1.6rem;
+.toast .close-btn:hover {
+  color: #ffffff;
+}
+/*===============================*/
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
   }
-  .card {
-    padding: 1.8rem 1rem;
-  }
-  .input-row button {
-    font-size: 1rem;
-    padding: 0.9rem;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-#stopBtn {
-  background-color: #ef4444;
+@keyframes fadeOutLeft {
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+/*===============================*/
+.full-width {
+  width: 100%;
+}
+/*===============================*/
+.btn-danger {
+  background-color: #ff0000;
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   font-size: 1.1rem;
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   width: 100%;
-  margin-top: 10px;
 }
-
-#stopBtn:hover {
+/*===============================*/
+.btn-danger:hover {
   background-color: #dc2626;
+  transform: scale(1.01);
 }
